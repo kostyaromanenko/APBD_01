@@ -1,19 +1,21 @@
-﻿class Program
+﻿
+class Program
 {
-    public static int FindMaximumValue(int[] numbers)
+    public static double CalculateAverage(int[] numbers)
     {
-        int maxValue = numbers[0]; 
-        foreach (int number in numbers) {
-            if (number > maxValue) {
-                maxValue = number;
-            }
+        int i = 0;
+        foreach (int number in numbers)
+        {
+            i += number;
         }
-        return maxValue;
+        
+        return (double)i / numbers.Length;
     }
 
-    static void Main(string[] args) {
-        int[] numbers = { 5, 3, 9, 1, 6 };
-        int max = FindMaximumValue(numbers);
-        Console.WriteLine($"The maximum value is: {max}");
+    static void Main(string[] args)
+    {
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        double average = CalculateAverage(numbers);
+        Console.WriteLine($"The average is: {average}");
     }
 }
